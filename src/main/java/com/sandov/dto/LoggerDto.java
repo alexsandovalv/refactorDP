@@ -2,6 +2,8 @@ package com.sandov.dto;
 
 import java.time.Instant;
 
+import com.sandov.domain.LoggerDomain;
+
 public class LoggerDto {
 	
 	private String message;	
@@ -20,6 +22,10 @@ public class LoggerDto {
 	
 	public LoggerDto(String message, String type) {
 		this(message, type, Instant.now());
+	}
+	
+	public LoggerDto(LoggerDomain domain) {
+		this(domain.getMessage(), domain.getType().getLabel(), domain.getDate());
 	}
 
 	public String getMessage() {

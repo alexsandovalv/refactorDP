@@ -23,28 +23,21 @@ public class FileTest {
 	@Qualifier("factoryLog")
 	private LoggerFactory factory;
 	
-	private ILogger database = null;
+	private ILogger file;
 	
 	@Before
-	private void setUp() {
-		database = factory.getLogger("database");
+	public void setUp() {
+		file = factory.getLogger("file");
 	}
 	
 	@Test
-	public void registerLogWithDataBaseAndMessageTest() {
-		LoggerDto bLogger = new LoggerDto("Dentro de la base de datos", "Message");
-//		ILogger database = factory.getLogger("database");
+	public void registerLogWithFileAndInfoTest() {
+		LoggerDto bLogger = new LoggerDto("Texto en archivo ", "Message");
+//		ILogger file = factory.getLogger("file");
 		
-		database.logMessage(bLogger);
+		file.logMessage(bLogger);
 		
-		assertNotNull(database);
+		assertNotNull(file);
 	}
 	
-	@Test
-	public void sizeLogWithDataBaseAndMessageTest() {
-//		ILogger database = factory.getLogger("database");
-		
-		
-	}
-
 }

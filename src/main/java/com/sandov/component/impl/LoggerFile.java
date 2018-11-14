@@ -30,4 +30,5 @@ public class LoggerFile implements ILogger{
 			log.info(StringUtils.repeat("*", 50));
 		}
 	}
+
 }

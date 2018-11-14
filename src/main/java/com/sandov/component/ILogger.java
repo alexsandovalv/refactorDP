@@ -5,5 +5,5 @@ import com.sandov.dto.LoggerDto;
 public interface ILogger {
 	
 	void logMessage(LoggerDto loggerDto);
-
+	
 }
